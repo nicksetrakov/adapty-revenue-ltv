@@ -1,6 +1,7 @@
 # adapty_revenue_export_all_countries_p0.py
 from __future__ import annotations
 import json, time, requests
+import os
 from typing import Dict, Any, List, Tuple
 import pandas as pd
 from config import APP_API_KEYS  # dict: {app_name: api_key}
@@ -16,6 +17,8 @@ ACCOUNTING  = "revenue"    # "revenue" | "proceeds"
 ROUND_TO    = 2
 EPS         = 1e-8
 MAX_MONTHS  = 12           # жёстко фиксируем витрину на P0..P11
+
+os.makedirs("reports", exist_ok=True)
 
 # ---------- ISO mapping (fallback; pycountry опционально) ----------
 try:

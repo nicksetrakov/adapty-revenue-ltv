@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json, time, requests
+import os
 from typing import Dict, Any, List, Tuple, Optional, Union
 import pandas as pd
 
@@ -19,6 +20,8 @@ ACCOUNTING  = "revenue"    # "revenue" | "proceeds"
 ROUND_TO    = 2
 EPS         = 1e-8
 MAX_MONTHS  = 12           # витрина P0..P11
+
+os.makedirs("reports", exist_ok=True)
 
 # --- OPTIONAL FILTERS ---
 # STORE: None | "app_store" | "play_store" | синонимы: "ios","apple","app store","google","android","play store"

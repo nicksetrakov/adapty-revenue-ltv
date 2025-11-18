@@ -1,6 +1,7 @@
 # adapty_revenue_export_all_countries_p0_filters.py
 from __future__ import annotations
 import json, time, requests
+import os
 from typing import Dict, Any, List, Tuple, Optional, Union
 import pandas as pd
 from config import APP_API_KEYS  # dict: {app_name: api_key}
@@ -25,6 +26,8 @@ MAX_MONTHS  = 12           # витрина P0..P11
 STORE: Optional[str] = "play_store"
 # DURATIONS: None | str | List[str] из {"weekly","monthly","quarterly","semiannual","annual"} | синонимы "month","year","3m","6m","1y" и т.п.
 DURATIONS: Optional[Union[str, List[str]]] = None
+
+os.makedirs("reports", exist_ok=True)
 
 # ---------- ISO mapping (fallback; pycountry опционально) ----------
 try:

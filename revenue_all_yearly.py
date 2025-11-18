@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json, time, requests
+import os
 from typing import Dict, Any, List, Tuple, Optional, Union
 import pandas as pd
 
@@ -18,6 +19,8 @@ COUNTRIES   = [
 ACCOUNTING  = "revenue"    # "revenue" | "proceeds"
 ROUND_TO    = 2
 EPS         = 1e-8
+
+os.makedirs("reports", exist_ok=True)
 
 # --- OPTIONAL FILTERS ---
 STORE: Optional[str] = None   # None | "app_store" | "play_store"
